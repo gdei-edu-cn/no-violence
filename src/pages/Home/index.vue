@@ -127,7 +127,7 @@
                     >
                       取消
                     </button>
-                    <button type="button" class="btn bg-warning text-white">
+                    <button type="button" class="btn bg-warning text-white real">
                       确认
                     </button>
                   </div>
@@ -190,7 +190,7 @@
             </div>
             <!-- 反馈按钮弹出框 -->
             <div
-              class="modal fade"
+              class="modal fade feelback"
               id="exampleModal"
               tabindex="-1"
               role="dialog"
@@ -249,7 +249,7 @@
                     >
                       关闭
                     </button>
-                    <button type="button" class="btn btn-primary">
+                    <button type="button" class="btn btn-primary real">
                       发送反馈
                     </button>
                   </div>
@@ -405,8 +405,41 @@ export default {
 </script>
 
 <style lang="less" scoped>
+// 定义颜色变量
+// @themeColor:#40A070;
+@themeColor:#4E7CA0;
+@bgColor:#edeeed;
+
+// 头部
+.navbar{
+  background-color: @bgColor !important;
+  // 左侧logo与文字
+  .navbar-brand{
+    color: @themeColor !important;
+    i{
+
+    }
+  }
+  // 下拉菜单按钮
+  .navbar-toggler{
+  }
+  // 下拉菜单
+  .collapse{
+    button{
+      color: @themeColor !important;
+      border-color: @themeColor !important;
+    }
+  }
+}
+// 内容
 section{
+    background-image: linear-gradient(@bgColor,#fff) !important;
     padding-bottom: 20vw;
+    .swiper-pagination{
+      span.swiper-pagination-bullet-active{
+        color: @themeColor !important;
+      }
+    }
     .swiperImg{
       width: 100vw;
       height: 58vw;
@@ -414,9 +447,11 @@ section{
     .cardWrapper{
 
         .card{
-            box-shadow: 0 0 2vw 1vw #b3b3b3;
+            background-color: white !important;
+            color: @themeColor;
+            box-shadow: 0 0 1vw 0.5vw #e7e7e7;
+            border: none;
             padding: 0 !important;
-            
             .card-body{
                 display: flex;
                 justify-content: center;
@@ -447,15 +482,45 @@ section{
                     // margin-top: 15vw;
                 }
             }
-            
+            #policeModal{
+              color: @themeColor;
+              #exampleModalLabel{
+                // background-color: @themeColor !important;
+                color: @themeColor !important;
+              }
+              .modal-body{
+                background-color: white !important;
+                color: @themeColor !important;
+              }
+              .modal-footer{
+                .real{
+                  background-color: @themeColor !important;
+                }
+                
+              }
+            }
+            .feelback{
+              .modal-header{
+                .modal-title{
+                  color: @themeColor !important;
+                }
+              }
+              .modal-body{
+                .col-form-label,.form-control{
+                  color: @themeColor !important;
+                }
+                
+              }
+              .modal-footer{
+                .real{
+                  background-color: @themeColor !important;
+                }
+              }
+            }
         }
         .firstCard{
             width: 100% !important;
         }
-        .evenCard{
-            // box-shadow: 1vw 1vw 1vw #007BFF;
-        }
-
     }
     // 一对一帮扶加载栏
     .loadAnimaBg{ 
@@ -571,22 +636,30 @@ section{
             }
         }
     }
-
     // 上传文件按钮
     .subFile,.subImg,.subVideo{
         position: absolute;
         opacity: 0;
-        background-color: red;
         width: 15vw;
         height: 15vw;
         border-radius: 50%;
     }
-
     .hidden{
         display: none !important;
     }
     .show{
         display: block !important;
     }
-}
+} 
+</style>
+
+<style>
+/* 
+  swiper分页是操作DOM生成的，所以应该在它的CSS style里面不写Scpoed，
+  如果你的组件已经有了一个写过scpoed的style，
+  那可以另写一个style用来设置swiper分页样式。
+*/
+section .swiper-pagination-bullet-active{
+  background :#4E7CA0 !important;
+}  
 </style>

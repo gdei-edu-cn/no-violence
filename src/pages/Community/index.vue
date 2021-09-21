@@ -22,74 +22,6 @@
     <!-- 内容 -->
     <section class="communityContent">
       <!-- 滑动门 -->
-      <!-- <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-        <li class="nav-item">
-          <a
-            class="nav-link active"
-            id="pills-home-tab"
-            data-toggle="pill"
-            href="#pills-home"
-            role="tab"
-            aria-controls="pills-home"
-            aria-selected="true"
-            >Home</a
-          >
-        </li>
-        <li class="nav-item">
-          <a
-            class="nav-link"
-            id="pills-profile-tab"
-            data-toggle="pill"
-            href="#pills-profile"
-            role="tab"
-            aria-controls="pills-profile"
-            aria-selected="false"
-            >Profile</a
-          >
-        </li>
-        <li class="nav-item">
-          <a
-            class="nav-link"
-            id="pills-contact-tab"
-            data-toggle="pill"
-            href="#pills-contact"
-            role="tab"
-            aria-controls="pills-contact"
-            aria-selected="false"
-            >Contact</a
-          >
-        </li>
-      </ul>
-      <div class="tab-content" id="pills-tabContent">
-        <div
-          class="tab-pane fade show active"
-          id="pills-home"
-          role="tabpanel"
-          aria-labelledby="pills-home-tab"
-        >
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque libero
-          laudantium quia ad, facere odio exercitationem sit eius laboriosam
-          magni dicta eligendi! Error soluta debitis quibusdam aperiam ex hic
-          nisi!
-        </div>
-        <div
-          class="tab-pane fade"
-          id="pills-profile"
-          role="tabpanel"
-          aria-labelledby="pills-profile-tab"
-        >
-          2
-        </div>
-        <div
-          class="tab-pane fade"
-          id="pills-contact"
-          role="tabpanel"
-          aria-labelledby="pills-contact-tab"
-        >
-          3
-        </div>
-      </div> -->
-
       <div class="nav-tabs-wrapper">
         <nav>
           <div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -161,10 +93,22 @@ export default {
 </script>
 
 <style lang="less" scoped>
+
+@themeColor:#4E7CA0;
+@bgColor:#eef1f0;
+
+.navbar{
+  .navbar-brand{
+    color: @themeColor !important;
+  }
+  button{
+    background-color: @themeColor !important;
+  }
+}
+
 // 社区内容
 section.communityContent{
     padding-bottom: 15vw;
-    // padding: 0 5vw;
     .nav-tabs-wrapper{
       // border: 1px solid black;
       height: 40vw;
@@ -172,8 +116,18 @@ section.communityContent{
           // border: 1vw solid black;
           margin: 8vw 5vw 0 5vw;
           font-size: 4vw;
+          a{
+            color: black !important;
+          }
+          a.active{
+            color: @themeColor !important;
+            font-weight: 600;
+          }
       }
       .tab-content{
+          color: rgb(80, 80, 80);
+          font-size: 3.9vw;
+
           border: 1px solid #DEE2E6;
           border-top: none;
           margin: 0 5vw;

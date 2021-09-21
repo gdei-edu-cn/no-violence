@@ -64,10 +64,14 @@ export default {
 </script>
 
 <style lang="less" scoped>
+// 定义颜色变量
+@themeColor:#4E7CA0;
+@bgColor:#eef1f0;
 // 底部导航栏样式
 .menu{
-    background-color: #eee;
-    height: 16vw;
+    background-color: white !important;
+    border-top: 1px solid @bgColor;
+    height: 17vw;
     display: flex;
     justify-content: space-around;
 
@@ -78,29 +82,30 @@ export default {
         align-items: center;
         justify-content: center;
         
+        color: #B3B3B3;
         div{
-            width: 9vw;
-            height: 9vw;
+            width: 10vw;
+            height: 10vw;
             // background-color: red;
             border-radius: 50%;
             i{
-                font-size: 6vw;
+                font-size: 7vw;
                 margin-left: 1.5vw;
                 margin-top: 1vw;
             }
         }
         a{
-            font-size: 2vw;
-            color: black;
+              color: #B3B3B3;
+            font-size: 3vw;
         }
         
     }
     .activeI {
         color: white;
-        background-image: linear-gradient(to top right, #FFC107, #fdf2d2);
+        background-image: linear-gradient(to top right, @themeColor, white);
     }
     .activeSpan{
-        color: #FFC107 !important;
+        color: @themeColor !important;
     }
 }
 </style>

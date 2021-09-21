@@ -61,6 +61,15 @@ export default {
 </script>
 
 <style lang="less" scoped>
+@themeColor:#4E7CA0;
+@bgColor:#eef1f0;
+
+.navbar{
+  .navbar-brand{
+    color: @themeColor !important;
+  }
+}
+
 // 我的页面
 section.myContent{
     height: 90vh;
@@ -77,8 +86,8 @@ section.myContent{
         }
         .myHeadText{
             margin-left: 3vw;
-            font-size: 5vw;
-            color: #007BFF;
+            font-size: 4.5vw;
+            color: black;
             width: 66vw;
         }
         .myHeadMore{
@@ -97,6 +106,7 @@ section.myContent{
             font-size: 8vw;
         }
         a{
+          color: black;
             display: inline-block;
             margin-left: 4vw;
             font-size: 4vw;
